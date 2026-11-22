@@ -370,7 +370,7 @@ def cmd_apply(args):
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
-    default_cats = os.path.join(HERE, "..", "categories.txt")
+    default_cats = os.path.join(HERE, "categories.txt")
 
     s = sub.add_parser("init", help="create the category folders")
     s.add_argument("--out", required=True, help="output folder, e.g. F:\\THUMBNAILS")

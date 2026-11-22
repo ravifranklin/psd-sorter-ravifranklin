@@ -1,17 +1,12 @@
-work/
-__pycache__/
+# Never commit client work or generated output
 *.psd
 *.psb
 *.jpg
-plan.csv
-undo_log.csv
-UNDO.bat
-undo.sh
 *.jpeg
 *.png
+work/
 _work*/
 _exported/
 output/
+__pycache__/
 *.pyc
-map.txt
-renamed.txt
