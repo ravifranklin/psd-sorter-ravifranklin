@@ -1,0 +1,9 @@
+work/
+__pycache__/
+*.psd
+*.psb
+*.jpg
+plan.csv
+undo_log.csv
+UNDO.bat
+undo.sh
