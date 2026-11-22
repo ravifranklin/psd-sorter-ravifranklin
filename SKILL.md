@@ -72,3 +72,10 @@ their own list, use theirs.
 
 7. **Report** in plain English: how many files went into each folder, how many
    need review, and where the UNDO file is. Delete the work folder.
+
+## Variant: export JPGs into 50 niche folders
+If the user wants JPG copies sorted into numbered niche folders instead of moving the PSDs, use
+`scripts/psdsort.py` (steps `init`, `export`, `sheets`, `apply`; see README). Run `export` in short foreground
+chunks if long processes get killed. It resumes by itself. Classify from the sheets into a map file
+(`range:category`, numbers from `categories.txt`), then `apply`. Same privacy rule: work files never leave the
+user's machine.

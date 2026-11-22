@@ -1,0 +1,6 @@
+# Map file example: number(s) from the preview sheets : category number
+# Category numbers are the line numbers in categories.txt (1 = Podcast & Interviews).
+# Later lines override earlier ones.
+0-14:7
+15:24
+16-40:3

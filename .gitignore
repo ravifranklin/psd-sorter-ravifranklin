@@ -7,3 +7,11 @@ plan.csv
 undo_log.csv
 UNDO.bat
 undo.sh
+*.jpeg
+*.png
+_work*/
+_exported/
+output/
+*.pyc
+map.txt
+renamed.txt

@@ -78,6 +78,35 @@ Change them in `SKILL.md` or just tell Claude your own list.
 
 Python 3.9+, [psd-tools](https://github.com/psd-tools/psd-tools), Pillow.
 
+---
+
+## Second tool: export to JPG and sort into 50 niches
+
+`scripts/psdsort.py` does a different job from the tool above. It leaves your PSDs where they are, exports a full-size,
+high-quality JPG of every PSD/PSB, and files the JPGs into 50 numbered niche folders (`01 Podcast & Interviews` …
+`50 Other - General Content`, listed in `categories.txt`). This is what was used to organise an archive of over
+23,000 thumbnails.
+
+- Handles 16-bit and 32-bit PSDs quickly, plus giant PSB canvases (saved at about 4,000 px wide)
+- Skips macOS `._` junk files and logs corrupted files instead of stopping
+- Can be stopped and restarted. It continues where it left off
+- Files already inside a subfolder named like a category are sorted automatically
+- Duplicate names get `1`, `2`, `3`… added, so nothing is overwritten (listed in `renamed.txt`)
+
+```bash
+pip install -r requirements.txt
+
+python scripts/psdsort.py init   --out "F:/THUMBNAILS"
+python scripts/psdsort.py export "E:/My PSDs" "D:/More PSDs" --out "F:/THUMBNAILS" --work "F:/THUMBNAILS/_work"
+python scripts/psdsort.py sheets --work "F:/THUMBNAILS/_work" --skip-prefilled
+# look at the numbered sheets and write map.txt, e.g.  0-14:7  (see map.example.txt)
+python scripts/psdsort.py apply  --out "F:/THUMBNAILS" --work "F:/THUMBNAILS/_work" --map map.txt
+```
+
+Category numbers are the line numbers in `categories.txt`. You can decide them yourself from the sheets, or let
+Claude (or any AI that can see images) read the sheets and write `map.txt`. Keep the `_work` folder private: it
+contains your file names and previews.
+
 ## License
 
 MIT
